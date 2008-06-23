@@ -23,12 +23,12 @@ Wtyczka Open C SDK dla SDK S60 3rd Edition.
 %prep
 %setup -n gnupoc-package-%{version}
 
-%build
-mkdir _e
+install -d _e
 unzip -qn %{SOURCE1} -d _e
+unzip -qLo _e/Rpipe_3.1.zip -d _e
 
+%build
 cd _e
-unzip -qLo Rpipe_3.1.zip
 
 ../sdks/lowercase epoc32/release
 
@@ -41,7 +41,6 @@ unzip -qLo Rpipe_3.1.zip
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_datadir}/symbian/s60v3fp1
 
 cp -r _e/epoc32 $RPM_BUILD_ROOT%{_datadir}/symbian/s60v3fp1

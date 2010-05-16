@@ -9,6 +9,7 @@ Source0:	http://www.martin.st/symbian/gnupoc-package-%{version}.tar.gz
 # Source0-md5:	4d3f903c3952b028b54e3ff5c657e527
 Source1:	s60_openc_plugin_MR.zip
 URL:		http://www.forum.nokia.com/main/resources/technologies/open_c/index.html
+BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		no_install_post_strip	1
